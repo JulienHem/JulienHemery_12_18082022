@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  &-content {
+    margin: 4em 8em;
+    width: 100%;
+
+    &-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 6em;
+
+      &-charts {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        &-bot {
+
+        }
+      }
+      &-datas {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+      }
+    }
+
+  }
+}

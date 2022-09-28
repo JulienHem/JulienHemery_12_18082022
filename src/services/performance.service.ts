@@ -8,7 +8,6 @@ export async function getPerformance(userId: number) {
     try {
         const data = await fetch(apiRoute(userId));
         const res = await data.json();
-        console.log(res)
         return new Performance(res.data);
     } catch (e) {
         console.log(e)

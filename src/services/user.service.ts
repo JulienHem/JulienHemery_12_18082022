@@ -8,7 +8,6 @@ export async function getUser(id: number){
     try {
         const data = await fetch(apiRoute(id));
         const res = await data.json();
-        console.log(res)
         return new User(res.data);
     } catch (e) {
         console.log(e)

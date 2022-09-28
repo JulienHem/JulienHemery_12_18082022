@@ -31,6 +31,7 @@ export function ChartRadar( { performance }: IProps) {
     const performanceData =  Object.keys(performance.kind).map((keys) => {
       return performance.data.find((data) => data.kind === parseInt(keys))
     })
+
     const data = {
         labels,
         datasets: [
@@ -42,5 +43,7 @@ export function ChartRadar( { performance }: IProps) {
             },
         ],
     };
+
+
     return <Radar data={data} />;
 }

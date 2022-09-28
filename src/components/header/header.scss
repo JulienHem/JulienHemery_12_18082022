@@ -1,0 +1,19 @@
+.header {
+  background-color: #020203
+;
+  display: flex;
+  gap: 6em;
+  padding: 2em 1em;
+
+  &-links {
+    color: white;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    &-link {
+      color: white;
+      font-size: 24px;
+    }
+  }
+}

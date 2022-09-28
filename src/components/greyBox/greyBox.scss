@@ -1,0 +1,26 @@
+.box {
+  background-color: #FBFBFB;
+  border-radius: 6px;
+  padding: 2em;
+
+  &-amounts {
+    display: flex;
+    gap: 1.5em;
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      &-amount {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      &-title {
+        color: #74798C;
+        font-size: 14px;
+      }
+    }
+  }
+}

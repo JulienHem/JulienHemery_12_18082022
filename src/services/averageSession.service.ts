@@ -1,7 +1,7 @@
 import {AverageSession} from "../models/averageSession";
 
 function apiRoute(id: number) {
-    return `http://localhost:3000/user/${id}/average-session`
+    return `http://localhost:3000/user/${id}/average-sessions`
 }
 
 export async function getAverageSession(userId: number) {
@@ -9,7 +9,6 @@ export async function getAverageSession(userId: number) {
         const data = await fetch(apiRoute(userId));
 
         const res = await data.json();
-        console.log(res)
         return new AverageSession(res.data);
     } catch (e) {
         console.log(e)
