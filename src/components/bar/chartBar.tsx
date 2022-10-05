@@ -9,6 +9,7 @@ import {
 } from 'chart.js';
 import {Bar} from 'react-chartjs-2';
 import {sessionsData} from "../../models/activity";
+import './chartBar.scss';
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -29,11 +30,10 @@ export default function ChartBar({sessions}: IProps) {
         responsive: true,
         plugins: {
             legend: {
-                position: 'top' as const,
+                display: false,
             },
             title: {
-                display: true,
-                text: 'Activité quotidienne',
+                display: false,
             },
         },
     };
@@ -67,6 +67,25 @@ export default function ChartBar({sessions}: IProps) {
     };
 
     return (
-        <Bar options={options} data={data} />
+        <div className="bar">
+            <div className="bar-header">
+                <div className="bar-header-title">Activité quotidienne</div>
+                <div className="bar-header-labels">
+                    <div className="bar-header-labels-spec">
+                        <div className="black bubble" />
+                        <div className="bar-header-labels-spec-title">Poids (kg)</div>
+                    </div>
+                    <div className="bar-header-labels-spec">
+                        <div className="red bubble" />
+                        <div className="bar-header-labels-spec-title">Calories brûlées (kCal)</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <Bar options={options} data={data} />
+
+            </div>
+        </div>
+
     )
 }

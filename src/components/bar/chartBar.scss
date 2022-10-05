@@ -1,0 +1,47 @@
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      font-weight: 500;
+      font-size: 17px;
+      color: #20253A;
+    }
+
+    &-labels {
+      display: flex;
+      gap: 2em;
+
+      &-spec {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+        &-title {
+          font-weight: 500;
+          font-size: 17px;
+          color: #74798C;
+        }
+
+        .bubble {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+
+        }
+        .red {
+          background-color: #E60000
+        }
+
+        .black {
+          background-color: #20253A;
+        }
+      }
+    }
+  }
+}
