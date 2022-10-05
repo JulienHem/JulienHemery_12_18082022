@@ -1,0 +1,19 @@
+.line {
+  display: flex;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.57);
+  border-radius: 6px;
+  padding: 1em;
+  background-color: #FF0000;
+  position: relative;
+  max-width: 258px;
+  max-height: 263px;
+  &-title {
+    width: 50%;
+    text-align: start;
+  }
+
+  &-chart {
+    height: 100%;
+  }
+}

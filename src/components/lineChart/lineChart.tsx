@@ -1,4 +1,5 @@
 import {Line} from 'react-chartjs-2';
+import './lineChart.scss';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -30,13 +31,38 @@ export function LineChart({averageSession}: IProps) {
     const options = {
         responsive: true,
         tension: 0.4,
+        maintainAspectRatio: false,
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.57)'
+                }
+
+            },
+            y: {
+                display: false, //this will remove all the x-axis grid lines
+                grid: {
+                    display: false
+                }
+            }
+        },
         plugins: {
+            tooltip: {
+                enabled: true,
+            },
             legend: {
-                position: 'top' as const,
+                display: false,
+                labels: {
+                    color: '#ffffff',
+
+                }
             },
             title: {
                 display: true,
-                text: 'Durée moyenne des sessions',
+                color: '#ffffff',
             },
         },
     };
@@ -52,14 +78,24 @@ export function LineChart({averageSession}: IProps) {
             {
                 label: 'Dataset 1',
                 data: averageSession.map((data) => data?.sessionLength),
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: '#ffffff',
+                backgroundColor: "#ffffff",
+
             },
 
         ],
     };
 
     return (
-        <Line options={options} data={data}/>
+        <div className="line">
+            <div className="line-title">Durée moyenne des sessions</div>
+
+            <div className="line-chart">
+                <Line options={options} data={data}/>
+
+            </div>
+        </div>
+
+
     )
 }

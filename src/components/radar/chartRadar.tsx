@@ -1,4 +1,5 @@
 import React from 'react';
+import './chartRadar.scss';
 import {
     Chart as ChartJS,
     RadialLinearScale,
@@ -32,18 +33,75 @@ export function ChartRadar( { performance }: IProps) {
       return performance.data.find((data) => data.kind === parseInt(keys))
     })
 
+    console.log(labels)
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scale: {
+            gridLines: {
+                color: '#ffffff'
+            },
+            angleLines: {
+                color: '#ffffff'
+            }
+        },
+        scales: {
+            r : {
+                grid: {
+                    color: '#ffffff',
+                },
+                pointLabels: {
+                    color: '#ffffff',
+                },
+                ticks: {
+                    textStrokeColor: 'rgba(54,162,235,0)',
+                    color: 'rgba(240,240,240,0)',
+                    backdropColor: 'rgba(47,56,62,0)'
+                },
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: '#ffffff'
+                }
+            },
+            y: {
+                display: false, //this will remove all the x-axis grid lines
+                grid: {
+                    display: false
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: false,
+            },
+            title: {
+                display: false,
+            },
+        },
+    };
+
     const data = {
         labels,
         datasets: [
             {
                 data: performanceData.map((data) => data?.value),
                 backgroundColor: 'rgba(230,0,0,0.53)',
-                borderColor: 'rgba(255, 99, 132, 1)',
+                borderColor: 'rgba(230,0,0,0.53)',
                 borderWidth: 1,
             },
         ],
     };
 
 
-    return <Radar data={data} />;
+    return (
+        <div className="chartRadar">
+            <Radar options={options} data={data} />
+        </div>
+    )
+
 }

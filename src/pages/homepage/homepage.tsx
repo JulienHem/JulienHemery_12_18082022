@@ -19,6 +19,7 @@ import AppleLogo from '../../assets/apple.svg';
 import BurgerLogo from '../../assets/cheeseburger.svg';
 import {getAverageSession} from "../../services/averageSession.service";
 import {LineChart} from "../../components/lineChart/lineChart";
+import DoughnutChart from "../../components/doughnutChart/doughnutChart";
 
 
 export default function Homepage() {
@@ -58,11 +59,15 @@ export default function Homepage() {
                         </div>
                         <div className="main-content-stats-charts-bot">
                             {
+                                averageSession && <LineChart averageSession={averageSession.sessions} />
+                            }
+                            {
                                 performance && <ChartRadar performance={performance} />
                             }
                             {
-                                averageSession && <LineChart averageSession={averageSession.sessions} />
+                                user?.todayScore && <DoughnutChart user={user} />
                             }
+
                         </div>
 
                     </div>

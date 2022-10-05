@@ -43,7 +43,6 @@ export default function ChartBar({sessions}: IProps) {
     const data = {
         labels,
         datasets: [
-
             {
                 borderRadius: 10,
                 barThickness : 25,
