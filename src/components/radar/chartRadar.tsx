@@ -33,8 +33,6 @@ export function ChartRadar( { performance }: IProps) {
       return performance.data.find((data) => data.kind === parseInt(keys))
     })
 
-    console.log(labels)
-
     const options = {
         responsive: true,
         maintainAspectRatio: false,

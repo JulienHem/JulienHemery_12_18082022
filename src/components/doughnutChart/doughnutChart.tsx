@@ -12,7 +12,6 @@ export default function DoughnutChart({user} : IProps) {
     const todayScore = user.todayScore * 100;
     const rest = 100 - todayScore;
 
-    console.log(todayScore)
 
     const options = {
         cutout: 90,

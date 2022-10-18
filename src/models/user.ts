@@ -11,7 +11,6 @@ interface keyData {
     lipidCount:  number;
 }
 
-
 export default class User {
     public id: number;
     public userInfos: userInfos;

@@ -3,7 +3,6 @@ export interface performanceData {
     kind: number;
 }
 
-
 export class Performance {
 
     public kind: Object;
@@ -13,5 +12,4 @@ export class Performance {
         this.kind = data.kind;
         this.data = data.data;
     }
-
 }

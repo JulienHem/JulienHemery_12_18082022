@@ -70,7 +70,6 @@ export function LineChart({averageSession}: IProps) {
     const labels = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
 
-    console.log(labels)
 
     const data = {
         labels,
