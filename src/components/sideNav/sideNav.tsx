@@ -13,7 +13,7 @@ export default function SideNav() {
             <LogoBtn img={SwimLogo} bgColor='#ffffff'/>
             <LogoBtn img={BicycleLogo} bgColor='#ffffff'/>
             <LogoBtn img={WeightLogo} bgColor='#ffffff'/>
-            <div className="sideNav-title">Copiryght, SportSee 2020</div>
+            <div className="sideNav-title">Copyright, SportSee 2022</div>
         </div>
     )
 }

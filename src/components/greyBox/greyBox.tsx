@@ -10,6 +10,17 @@ interface IProps {
     bgColor ?: string;
 }
 
+/**
+ *
+ * @param children - Content that you can add after calling the component
+ * @param isChart - Boolean to switch the content of the component
+ * @param amount
+ * @param title
+ * @param logo
+ * @param bgColor - Change the color of the background
+ * @constructor
+ */
+
 export default function GreyBox({children, isChart, amount, title, logo, bgColor}: IProps) {
 
 

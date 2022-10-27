@@ -11,7 +11,12 @@ interface keyData {
     lipidCount:  number;
 }
 
+/**
+ * Model of the user, call it to initialize it after a query
+ */
+
 export default class User {
+
     public id: number;
     public userInfos: userInfos;
     public todayScore: number;

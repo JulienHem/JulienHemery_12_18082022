@@ -36,8 +36,15 @@ export default function Homepage() {
     useEffect(() => {
         const fetchUser = async () => {
             if( id ) {
+                /**
+                 * Retrieve the user
+                 */
                 const user = await getUser(parseInt(id))
                 if (user) {
+
+                    /**
+                     * Get all the data if the user is connected
+                     */
                     setUser(user);
                     setActivity(await getActivity(parseInt(id)))
                     setPerformance(await getPerformance(parseInt(id)))

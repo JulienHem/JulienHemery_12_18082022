@@ -24,6 +24,12 @@ interface IProps {
     sessions: sessionsData[]
 }
 
+/**
+ *
+ * @param { sessionsData[] } sessions - All the sessions for the chart
+ * @constructor
+ */
+
 export default function ChartBar({sessions}: IProps) {
 
     const options = {
@@ -38,8 +44,14 @@ export default function ChartBar({sessions}: IProps) {
         },
     };
 
+    /**
+     * Retrieve the labels of the sessions
+     */
     const labels = sessions.map((sessions, index) => {return index.toString()})
 
+    /**
+     * Put the data and labels to the chart
+     */
     const data = {
         labels,
         datasets: [
@@ -83,7 +95,6 @@ export default function ChartBar({sessions}: IProps) {
             </div>
             <div>
                 <Bar options={options} data={data} />
-
             </div>
         </div>
 
